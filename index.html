@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ordem Militar - Medalhas 🎖</title>
+    <link rel="icon" href="https://www.habbo.com.br/habbo-imaging/badge/b09134s43114s41194f74f3131b8a5c9311558ee0f561db7e0.gif">
+    <link rel="stylesheet" href="css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        html {
+            height: 100%;
+            background: linear-gradient(90deg, #265646, #437362);
+            background-size: 200% 200%;
+            background-attachment: fixed;
+            animation: gradientAnimation 15s ease infinite;
+        }
+    
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            overflow-y: auto;
+            background: transparent;
+        }
+    
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+            margin-bottom: 40px; 
+            margin-left: 10px;
+            position: relative;
+            z-index: 1; 
+            transition: background-color 0.3s;
+        }
+    
+        .tittle {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    
+        .input-box {
+            position: relative;
+        }
+    
+        .details_span {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+    
+        input[type="text"],
+        select,
+        input[type="number"] {
+            width: 90%; 
+            height: 52px;
+            background-color: #e7e7e7;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #282828;
+            transition: border-color 0.3s ease;
+        }
+    
+        .button {
+            grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            background-color: white;
+            color: #265646;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 1.15rem;
+            height: 90px;
+            z-index: 2;
+            position: relative;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    
+        .button .icon {
+            margin-right: 8px;
+            height: 1.15rem;
+            width: auto;
+        }
+    
+        .button:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.01);
+        }
+    
+        .card {
+            display: none; /* Inicialmente escondido */
+        }
+    
+        .card.active {
+            display: block; /* Mostra apenas quando ativo */
+        }
+    
+    
+        .form-container .row {
+            display: flex;
+            gap: 10px;
+        }
+    
+        .form-container .row input,
+        .form-container .row select,
+        .form-container .row textarea {
+            width: calc(50% - 5px);
+        }
+    
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+    
+        ::-webkit-scrollbar-track {
+            background: #265646;
+        }
+    
+        ::-webkit-scrollbar-thumb {
+            background: #429479;
+            border-radius: 10px;
+        }
+    
+        ::-webkit-scrollbar-thumb:hover {
+            background: #429479;
+        }
+    
+        .buttons {
+            display: flex;
+            justify-content: space-around; 
+            margin-bottom: 20px; 
+        }
+    
+        .initial-image {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            margin-top: 100px;
+        }
+    
+        .card.active + .initial-image {
+            display: none; 
+        }
+    
+        input[type="submit"] {
+            width: 100%;
+            height: 68px;
+            background-color: #265646;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #143027;
+        }
+    
+        
+        @media screen and (min-width: 2560px) and (min-height: 1440px) {
+            .initial-image {
+                margin-top: 600px; 
+            }
+            .container {
+                margin-top: 220px; 
+            }
+        }
+    
+        @media screen and (min-width: 1920px) and (min-height: 1080px) {
+            .initial-image {
+                margin-top: 330px;
+            }
+            .container {
+                margin-top: 200px; 
+            }
+        }
+    
+        @media screen and (min-width: 1600px) and (max-width: 1919px) {
+            .initial-image {
+                margin-top: 270px; 
+            }
+            .container {
+                margin-top: 150px; 
+            }
+        }
+    
+        @media screen and (min-width: 1366px) and (max-width: 1599px) {
+            .initial-image {
+                margin-top: 150px; 
+            }
+            .container {
+                margin-top: 120px; 
+        }
+    }
+    
+        @media screen and (min-width: 1280px) and (max-width: 1365px) {
+            .initial-image {
+                margin-top: 130px; 
+            }
+            .container {
+                margin-top: 110px; 
+            }
+        }
+    
+        @media screen and (min-width: 1024px) and (max-width: 1279px) {
+            .initial-image {
+                margin-top: 40px; 
+            }
+            .container {
+                margin-top: 100px; 
+            }
+        }
+    
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            .initial-image {
+                margin-top: 110px; 
+            }
+            .container {
+                margin-top: 90px; 
+            }
+        }
+    
+        @media screen and (max-width: 767px) {
+            .initial-image {
+                margin-top: 130px; 
+            }
+            .container {
+                margin-top: 80px; 
+            }
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <img src="https://i.imgur.com/GU8oq2S.png" alt="Imagem Inicial" class="initial-image">
+    <div class="container">
+        
+        <div class="buttons">
+            <button class="button initial-button" onclick="toggleForm('postagem_medalhas')">
+                <img src="https://i.imgur.com/AgoIicV.gif" alt="Ícone" class="icon" />
+                POSTAGEM DE MEDALHAS
+            </button>
+        </div>
+
+        <div class="card" id="postagem_medalhas">
+            <div class="tittle">Postagem de Medalhas</div>
+            <form id="postagem_medalhas_form" action="#" onsubmit="return fill_medals(event)">
+                <div class="details">
+                    <input type="text" name="horario_envio_medalhas" id="horario_envio_medalhas" value="-" style="display: none;">
+                    
+                    <div class="input-box">
+                        <span class="details_span">Nickname</span>
+                        <input id="nickname_aplicador" name="nickname_aplicador" type="text" placeholder="Seu nickname" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Receptor</span>
+                        <input id="nickname_pres" name="nickname_pres" type="text" placeholder="Separe com ' / '" required>
+                    </div>
+                    <div class="input-box">
+                      <span class="details_span">Quantidade de medalhas</span>
+                      <input id="medals_quantity" name="medals_quantity" type="text" placeholder="Quantidade de medalhas" required>
+                  </div>
+                  
+                    <div class="input-box" style="grid-column: span 2;">
+                        <span class="details_span">Motivos</span>
+                        <select name="necessidade_novos" id="necessidade_novos" required>
+                            <option value="" disabled selected>Selecione um dos motivos</option>
+                            <option value="Funções cumpridas no Departamento de Comunicação">Funções cumpridas no Departamento de Comunicação</option>
+                            <option value="Funções cumpridas no Setor de Fiscalização">Funções cumpridas no Setor de Fiscalização</option>
+                            <option value="Funções cumpridas no Departamento de Aplicação">Funções cumpridas no Departamento de Aplicação</option>
+                            <option value="Infração Interna">Infração Interna</option>
+                            <option value="Expulsão">Expulsão</option>
+                        </select>
+                    </div>
+                    <div class="button" id="enviar_medalhas">
+                        <input type="submit" value="Enviar Medalhas">
+                    </div>
+                    <div class="button" style="display: none;" id="enviar_medalhas_dis">
+                        <input type="submit" value="Enviando...Aguarde!" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+    <textarea style="display: none;" id="fa-generated-message"></textarea>       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#select_options').on('change', function(){
+                $(".card").hide();
+                $("#" + $(this).val()).show();
+            }).change();
+        });
+    
+        function fill_medals(e) {
+            e.preventDefault();
+    
+           
+            var isValid = true;
+            $("#postagem_medalhas_form").find("input, select").each(function() {
+                if ($(this).val() == "") {
+                    isValid = false;
+                }
+            });
+    
+        
+            if (isValid) {
+                document.getElementById('enviar_medalhas').style.display = 'none';
+                document.getElementById('enviar_medalhas_dis').style.display = 'flex';
+    
+             
+                var now = new Date();
+                var dateStr = now.toISOString().slice(0, 19).replace('T', ' ');
+                document.getElementById('horario_envio_medalhas').value = dateStr;
+    
+              
+                var link_url = 'https://script.google.com/macros/s/AKfycbyvzkURDWN35KXDYFr2PREfyJHRqKR_TVC-pGRUbSGsAHgmqw47lt6em3ZCt11_UhDD/exec';
+    
+              
+                var form = document.getElementById('postagem_medalhas_form');
+                if (!form) {
+                    console.error('Formulário não encontrado');
+                    return false;
+                }
+    
+               
+                fetch(link_url, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Respostas enviadas com sucesso!', data);
+                   
+                    window.open('https://docs.google.com/spreadsheets/d/14fNr-QFbhNdBylAMxxkqxIJwH0xaA2uI6Jow8BANowI/edit?usp=sharing');
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar resposta para a planilha:', error);
+                    alert('Resposta não enviada para a planilha. Contate um membro do ministério!');
+                });
+    
+            } else {
+                alert('Preencha todos os campos!');
+            }
+    
+            return isValid;
+        }
+    
+        function toggleForm(formId) {
+            $(".card").hide();
+            $("#" + formId).show(); 
+        }
+    </script>
+    
+</body>
